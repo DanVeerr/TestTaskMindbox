@@ -1,0 +1,5 @@
+В базе данных MS SQL Server есть продукты и категории. Одному продукту может соответствовать много категорий, в одной категории может быть много продуктов. Напишите SQL запрос для выбора всех пар «Имя продукта – Имя категории». Если у продукта нет категорий, то его имя все равно должно выводиться.
+
+select p.name, c.name from categories_for_product cfr 
+left join products p on p.id = cfr.product_id 
+left join category c on c.id = cfr.category_id;
